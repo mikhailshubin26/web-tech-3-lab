@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>собрать ланч — заедал</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assemble.css">
+</head>
+<body>
+  <div class="page-root">
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="logo">заедал — собрать ланч</h1>
+        <nav class="main-nav" aria-label="Навигация">
+          <a href="index.html">главная</a>
+          <a id="active" href="assemble.html">собрать ланч</a>
+          <a href="#soups">супы</a>
+          <a href="#mains">главные блюда</a>
+          <a href="#drinks">напитки</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section id="soups" class="dish-section">
+        <h2>супы</h2>
+        <div class="dish-grid">
+          <div class="dish-card">
+            <img src="tom-yam.png?text=том-ям" alt="том ям">
+            <p class="dish-price">220 ₽</p>
+            <p class="dish-name">том ям</p>
+            <p class="dish-weight">350 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="mush-cream-soup.png?text=грибной-крем-суп" alt="грибной крем суп">
+            <p class="dish-price">240 ₽</p>
+            <p class="dish-name">крем-суп из грибов</p>
+            <p class="dish-weight">320 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="tomato-basil-soup.png?text=томатный-суп-с-базиликом" alt="томатный суп с базиликом">
+            <p class="dish-price">200 ₽</p>
+            <p class="dish-name">томатный суп с базиликом</p>
+            <p class="dish-weight">330 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="mains" class="dish-section">
+        <h2>главные блюда</h2>
+        <div class="dish-grid">
+          <div class="dish-card">
+            <img src="terri-rice.png?text=куриный-терияки-с-рисом-и-овощами" alt="куриный терияки с рисом и овощами">
+            <p class="dish-price">480 ₽</p>
+            <p class="dish-name">куриный терияки с рисом и овощами</p>
+            <p class="dish-weight">450 г</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="file-o-fish.png?text=рыбное-филе" alt="Рыбное филе">
+            <p class="dish-price">520 ₽</p>
+            <p class="dish-name">рыбное филе с картофельным пюре</p>
+            <p class="dish-weight">420 г</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="pasta.png?text=паста" alt="паста">
+            <p class="dish-price">450 ₽</p>
+            <p class="dish-name">паста с грибами и пармезаном</p>
+            <p class="dish-weight">400 г</p>
+            <button class="add-btn">добавить</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="drinks" class="dish-section">
+        <h2>напитки</h2>
+        <div class="dish-grid">
+          <div class="dish-card">
+            <img src="orange-juice.png?text=апельсиновый-сок" alt="апельсиновый сок">
+            <p class="dish-price">120 ₽</p>
+            <p class="dish-name">свежевыжатый апельсиновый сок</p>
+            <p class="dish-weight">250 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="green-tea.png?text=зеленый-чай" alt="зеленый чай">
+            <p class="dish-price">90 ₽</p>
+            <p class="dish-name">чай зелёный</p>
+            <p class="dish-weight">300 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+          <div class="dish-card">
+            <img src="coffee.png?text=американо" alt="американо">
+            <p class="dish-price">100 ₽</p>
+            <p class="dish-name">кофе американо</p>
+            <p class="dish-weight">200 мл</p>
+            <button class="add-btn">добавить</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="order-form-section container">
+      <h2>оформление заказа</h2>
+      <form action="https://httpbin.org/post" method="post" novalidate>
+        <div class="form-columns">
+          <div class="form-column">
+            <h3>ваш заказ</h3>
+            <label for="soup">суп</label>
+            <select id="soup" name="soup" required>
+              <option value="">выберите суп</option>
+              <option value="tom_yam">том ям (220 ₽)</option>
+              <option value="mushroom_cream">крем-суп из грибов (240 ₽)</option>
+              <option value="tomato_basil">томатный суп с базиликом (200 ₽)</option>
+            </select>
+
+            <label for="main">главное блюдо</label>
+            <select id="main" name="main" required>
+              <option value="">выберите главное блюдо</option>
+              <option value="teriyaki">куриный терияки с рисом и овощами (480 ₽)</option>
+              <option value="fish">рыбное филе с картофельным пюре (520 ₽)</option>
+              <option value="pasta">паста с грибами и пармезаном (450 ₽)</option>
+            </select>
+
+            <label for="drink">напиток</label>
+            <select id="drink" name="drink" required>
+              <option value="">выберите напиток</option>
+              <option value="orange_juice">свежевыжатый апельсиновый сок (120 ₽)</option>
+              <option value="green_tea">чай зелёный (90 ₽)</option>
+              <option value="americano">кофе американо (100 ₽)</option>
+            </select>
+
+            <label for="comment">комментарий к заказу</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+          </div>
+
+          <div class="form-column">
+            <h3>ваши данные</h3>
+
+            <label for="name">имя</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">телефон</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">адрес доставки</label>
+            <input type="text" id="address" name="address" required>
+
+            <div class="delivery-time">
+              <p>время доставки</p>
+              <label><input type="radio" name="delivery_type" value="asap" required> как можно скорее</label>
+              <label><input type="radio" name="delivery_type" value="exact"> точное время</label>
+            </div>
+
+            <label for="exact_time">указать время</label>
+            <input type="time" id="exact_time" name="exact_time" min="07:00" max="23:00" step="300" required>
+
+            <label>
+              <input type="checkbox" name="subscribe" checked>
+              согласен получать информацию о акциях
+            </label>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="reset">сбросить</button>
+          <button type="submit">отправить заказ</button>
+        </div>
+      </form>
+    </section>
+
+    <footer id="contacts" class="site-footer">
+      <div class="container footer-inner">
+        <p>Контакты: <a href="tel:+74951234567">+7 (495) 123-45-67</a> · <a href="mailto:info@zaedal.ru">info@zaedal.ru</a></p>
+        <p>Адрес: Мясницкая ул., 1, Москва</p>
+        <p>© 2025 заедал — доставка бизнес-ланчей</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
